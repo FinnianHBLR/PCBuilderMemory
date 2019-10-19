@@ -104,9 +104,6 @@
     <None Include="Resources\ssd.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\case.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\cooling.png" />
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +114,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Untitled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\case.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pauseBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newPauseBtm.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

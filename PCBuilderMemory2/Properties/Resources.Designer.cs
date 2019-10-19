@@ -65,7 +65,7 @@ namespace PCBuilderMemory2.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap _case {
             get {
-                object obj = ResourceManager.GetObject("case", resourceCulture);
+                object obj = ResourceManager.GetObject("_case", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +126,16 @@ namespace PCBuilderMemory2.Properties {
         internal static System.Drawing.Bitmap network {
             get {
                 object obj = ResourceManager.GetObject("network", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap newPauseBtn {
+            get {
+                object obj = ResourceManager.GetObject("newPauseBtn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox23 = new System.Windows.Forms.PictureBox();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
@@ -55,6 +56,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
@@ -113,6 +115,16 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.game_time);
+            // 
+            // pictureBox23
+            // 
+            this.pictureBox23.Image = global::PCBuilderMemory2.Properties.Resources.newPauseBtn;
+            this.pictureBox23.Location = new System.Drawing.Point(1300, 25);
+            this.pictureBox23.Name = "pictureBox23";
+            this.pictureBox23.Size = new System.Drawing.Size(66, 61);
+            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox23.TabIndex = 24;
+            this.pictureBox23.TabStop = false;
             // 
             // pictureBox22
             // 
@@ -216,7 +228,7 @@
             // 
             // pictureBox14
             // 
-            this.pictureBox14.Image = global::PCBuilderMemory2.Properties.Resources.cooling;
+            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
             this.pictureBox14.Location = new System.Drawing.Point(154, 378);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(121, 165);
@@ -286,7 +298,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::PCBuilderMemory2.Properties.Resources.cooling;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(575, 25);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(121, 165);
@@ -338,7 +350,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1397, 750);
+            this.Controls.Add(this.pictureBox23);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox22);
@@ -366,6 +380,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
@@ -420,6 +435,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBox23;
     }
 }
 
