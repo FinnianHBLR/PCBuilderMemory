@@ -1,0 +1,10 @@
+C:\Users\finnn\OneDrive\Semester 2\OOP\Assessment 2\PCBuilderMemory2\PCBuilderMemory2\bin\Debug\PCBuilderMemory2.exe.config
+C:\Users\finnn\OneDrive\Semester 2\OOP\Assessment 2\PCBuilderMemory2\PCBuilderMemory2\bin\Debug\PCBuilderMemory2.exe
+C:\Users\finnn\OneDrive\Semester 2\OOP\Assessment 2\PCBuilderMemory2\PCBuilderMemory2\bin\Debug\PCBuilderMemory2.pdb
+C:\Users\finnn\OneDrive\Semester 2\OOP\Assessment 2\PCBuilderMemory2\PCBuilderMemory2\obj\Debug\PCBuilderMemory2.csprojAssemblyReference.cache
+C:\Users\finnn\OneDrive\Semester 2\OOP\Assessment 2\PCBuilderMemory2\PCBuilderMemory2\obj\Debug\PCBuilderMemory2.Form1.resources
+C:\Users\finnn\OneDrive\Semester 2\OOP\Assessment 2\PCBuilderMemory2\PCBuilderMemory2\obj\Debug\PCBuilderMemory2.Properties.Resources.resources
+C:\Users\finnn\OneDrive\Semester 2\OOP\Assessment 2\PCBuilderMemory2\PCBuilderMemory2\obj\Debug\PCBuilderMemory2.csproj.GenerateResource.cache
+C:\Users\finnn\OneDrive\Semester 2\OOP\Assessment 2\PCBuilderMemory2\PCBuilderMemory2\obj\Debug\PCBuilderMemory2.csproj.CoreCompileInputs.cache
+C:\Users\finnn\OneDrive\Semester 2\OOP\Assessment 2\PCBuilderMemory2\PCBuilderMemory2\obj\Debug\PCBuilderMemory2.exe
+C:\Users\finnn\OneDrive\Semester 2\OOP\Assessment 2\PCBuilderMemory2\PCBuilderMemory2\obj\Debug\PCBuilderMemory2.pdb
