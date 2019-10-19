@@ -65,7 +65,7 @@ namespace PCBuilderMemory2.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap _case {
             get {
-                object obj = ResourceManager.GetObject("_case", resourceCulture);
+                object obj = ResourceManager.GetObject("case", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +166,16 @@ namespace PCBuilderMemory2.Properties {
         internal static System.Drawing.Bitmap ssd {
             get {
                 object obj = ResourceManager.GetObject("ssd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled {
+            get {
+                object obj = ResourceManager.GetObject("Untitled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

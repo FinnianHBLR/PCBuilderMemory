@@ -84,5 +84,10 @@ namespace PCBuilderMemory2
         {
 
         }
+
+        private void game_time(object sender, EventArgs e)
+        {
+
+        }
     }
 }
