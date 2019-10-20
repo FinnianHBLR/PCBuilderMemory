@@ -19,10 +19,8 @@ namespace PCBuilderMemory2
             InitializeComponent();
             //this.menuPanel.Visible = false;
 
-
             //Hides pause button
-            this.unPauseBtn.Visible = false;
-            this.pausePanel.Visible = false;
+
 
 
             pictureBoxes = new List<PictureBox>()
@@ -112,11 +110,14 @@ namespace PCBuilderMemory2
 
         private void StartGameTemp_Click(object sender, EventArgs e)
         {
+            //SHUFFLE
+
+            this.pausePanel.Visible = false;
+
+
             currentScore.Text = "0";
 
             game_timer.Enabled = true;
-
-            this.StartGameTemp.Visible = false;
 
             this.startPanle.Visible = false;
 
@@ -149,6 +150,18 @@ namespace PCBuilderMemory2
         private void MainQuitBtn_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+
+        }
+
+        private void MainMenuBtn_Click(object sender, EventArgs e)
+        {
+            //This will not save the score
+            this.startPanle.Visible = true;
+
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
 
         }
     }

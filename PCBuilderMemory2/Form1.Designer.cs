@@ -59,8 +59,13 @@
             this.unPauseBtn = new System.Windows.Forms.Button();
             this.pausePanel = new System.Windows.Forms.Panel();
             this.startPanle = new System.Windows.Forms.Panel();
-            this.pauseQuitBtn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.mainQuitBtn = new System.Windows.Forms.Button();
+            this.mainMenuBtn = new System.Windows.Forms.Button();
+            this.pauseQuitBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
@@ -356,61 +361,135 @@
             // 
             // StartGameTemp
             // 
-            this.StartGameTemp.Location = new System.Drawing.Point(142, 106);
+            this.StartGameTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(137)))));
+            this.StartGameTemp.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartGameTemp.ForeColor = System.Drawing.Color.White;
+            this.StartGameTemp.Location = new System.Drawing.Point(592, 282);
             this.StartGameTemp.Name = "StartGameTemp";
-            this.StartGameTemp.Size = new System.Drawing.Size(75, 23);
+            this.StartGameTemp.Size = new System.Drawing.Size(291, 80);
             this.StartGameTemp.TabIndex = 26;
-            this.StartGameTemp.Text = "Start";
-            this.StartGameTemp.UseVisualStyleBackColor = true;
+            this.StartGameTemp.Text = "Play";
+            this.StartGameTemp.UseVisualStyleBackColor = false;
             this.StartGameTemp.Click += new System.EventHandler(this.StartGameTemp_Click);
             // 
             // unPauseBtn
             // 
-            this.unPauseBtn.Location = new System.Drawing.Point(333, 165);
+            this.unPauseBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(137)))));
+            this.unPauseBtn.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unPauseBtn.ForeColor = System.Drawing.Color.White;
+            this.unPauseBtn.Location = new System.Drawing.Point(561, 218);
             this.unPauseBtn.Name = "unPauseBtn";
-            this.unPauseBtn.Size = new System.Drawing.Size(75, 23);
+            this.unPauseBtn.Size = new System.Drawing.Size(292, 69);
             this.unPauseBtn.TabIndex = 27;
             this.unPauseBtn.Text = "Play";
-            this.unPauseBtn.UseVisualStyleBackColor = true;
+            this.unPauseBtn.UseVisualStyleBackColor = false;
             this.unPauseBtn.Click += new System.EventHandler(this.UnPauseBtn_Click);
             // 
             // pausePanel
             // 
+            this.pausePanel.Controls.Add(this.startPanle);
+            this.pausePanel.Controls.Add(this.mainMenuBtn);
             this.pausePanel.Controls.Add(this.pauseQuitBtn);
             this.pausePanel.Controls.Add(this.unPauseBtn);
-            this.pausePanel.Location = new System.Drawing.Point(617, 241);
+            this.pausePanel.Controls.Add(this.label2);
+            this.pausePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pausePanel.Location = new System.Drawing.Point(0, 0);
             this.pausePanel.Name = "pausePanel";
-            this.pausePanel.Size = new System.Drawing.Size(749, 359);
+            this.pausePanel.Size = new System.Drawing.Size(1397, 750);
             this.pausePanel.TabIndex = 29;
             // 
             // startPanle
             // 
+            this.startPanle.Controls.Add(this.label4);
+            this.startPanle.Controls.Add(this.listBox1);
+            this.startPanle.Controls.Add(this.label3);
             this.startPanle.Controls.Add(this.mainQuitBtn);
             this.startPanle.Controls.Add(this.StartGameTemp);
-            this.startPanle.Location = new System.Drawing.Point(118, 90);
+            this.startPanle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.startPanle.Location = new System.Drawing.Point(0, 0);
             this.startPanle.Name = "startPanle";
-            this.startPanle.Size = new System.Drawing.Size(376, 221);
+            this.startPanle.Size = new System.Drawing.Size(1397, 750);
             this.startPanle.TabIndex = 30;
             // 
-            // pauseQuitBtn
+            // label3
             // 
-            this.pauseQuitBtn.Location = new System.Drawing.Point(333, 224);
-            this.pauseQuitBtn.Name = "pauseQuitBtn";
-            this.pauseQuitBtn.Size = new System.Drawing.Size(75, 23);
-            this.pauseQuitBtn.TabIndex = 28;
-            this.pauseQuitBtn.Text = "Quit";
-            this.pauseQuitBtn.UseVisualStyleBackColor = true;
-            this.pauseQuitBtn.Click += new System.EventHandler(this.Button1_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(524, 146);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(451, 58);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "PCBuilder Memory";
             // 
             // mainQuitBtn
             // 
-            this.mainQuitBtn.Location = new System.Drawing.Point(142, 151);
+            this.mainQuitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(137)))));
+            this.mainQuitBtn.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainQuitBtn.ForeColor = System.Drawing.Color.White;
+            this.mainQuitBtn.Location = new System.Drawing.Point(592, 390);
             this.mainQuitBtn.Name = "mainQuitBtn";
-            this.mainQuitBtn.Size = new System.Drawing.Size(75, 23);
+            this.mainQuitBtn.Size = new System.Drawing.Size(291, 79);
             this.mainQuitBtn.TabIndex = 27;
             this.mainQuitBtn.Text = "Quit";
-            this.mainQuitBtn.UseVisualStyleBackColor = true;
+            this.mainQuitBtn.UseVisualStyleBackColor = false;
             this.mainQuitBtn.Click += new System.EventHandler(this.MainQuitBtn_Click);
+            // 
+            // mainMenuBtn
+            // 
+            this.mainMenuBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(137)))));
+            this.mainMenuBtn.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainMenuBtn.ForeColor = System.Drawing.Color.White;
+            this.mainMenuBtn.Location = new System.Drawing.Point(561, 431);
+            this.mainMenuBtn.Name = "mainMenuBtn";
+            this.mainMenuBtn.Size = new System.Drawing.Size(292, 63);
+            this.mainMenuBtn.TabIndex = 28;
+            this.mainMenuBtn.Text = "Main Menu";
+            this.mainMenuBtn.UseVisualStyleBackColor = false;
+            this.mainMenuBtn.Click += new System.EventHandler(this.MainMenuBtn_Click);
+            // 
+            // pauseQuitBtn
+            // 
+            this.pauseQuitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(137)))));
+            this.pauseQuitBtn.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pauseQuitBtn.ForeColor = System.Drawing.Color.White;
+            this.pauseQuitBtn.Location = new System.Drawing.Point(561, 325);
+            this.pauseQuitBtn.Name = "pauseQuitBtn";
+            this.pauseQuitBtn.Size = new System.Drawing.Size(292, 70);
+            this.pauseQuitBtn.TabIndex = 28;
+            this.pauseQuitBtn.Text = "Quit";
+            this.pauseQuitBtn.UseVisualStyleBackColor = false;
+            this.pauseQuitBtn.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(503, 97);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(451, 58);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "PCBuilder Memory";
+            this.label2.Click += new System.EventHandler(this.Label2_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 23;
+            this.listBox1.Location = new System.Drawing.Point(1126, 236);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(240, 303);
+            this.listBox1.TabIndex = 29;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1165, 201);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(158, 34);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Top Scores";
             // 
             // Form1
             // 
@@ -418,7 +497,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1397, 750);
-            this.Controls.Add(this.startPanle);
             this.Controls.Add(this.pausePanel);
             this.Controls.Add(this.currentScore);
             this.Controls.Add(this.pictureBox23);
@@ -471,7 +549,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pausePanel.ResumeLayout(false);
+            this.pausePanel.PerformLayout();
             this.startPanle.ResumeLayout(false);
+            this.startPanle.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -511,6 +591,11 @@
         private System.Windows.Forms.Panel startPanle;
         private System.Windows.Forms.Button pauseQuitBtn;
         private System.Windows.Forms.Button mainQuitBtn;
+        private System.Windows.Forms.Button mainMenuBtn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
