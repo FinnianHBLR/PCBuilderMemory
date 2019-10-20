@@ -19,6 +19,12 @@ namespace PCBuilderMemory2
             InitializeComponent();
             //this.menuPanel.Visible = false;
 
+
+            //Hides pause button
+            this.unPauseBtn.Visible = false;
+            this.pausePanel.Visible = false;
+
+
             pictureBoxes = new List<PictureBox>()
             {
                 this.pictureBox1,
@@ -87,6 +93,62 @@ namespace PCBuilderMemory2
 
         private void game_time(object sender, EventArgs e)
         {
+            int currentTime = Convert.ToInt32(currentScore.Text);
+            //Gets time from label
+
+            currentTime++;
+
+            currentScore.Text = currentTime.ToString();
+        }
+
+        private void PictureBox23_Click(object sender, EventArgs e)
+        {
+            game_timer.Enabled = false;
+
+            this.unPauseBtn.Visible = true;
+
+            this.pausePanel.Visible = true;
+        }
+
+        private void StartGameTemp_Click(object sender, EventArgs e)
+        {
+            currentScore.Text = "0";
+
+            game_timer.Enabled = true;
+
+            this.StartGameTemp.Visible = false;
+
+            this.startPanle.Visible = false;
+
+            //Shuffle
+
+
+        }
+
+        private void UnPauseBtn_Click(object sender, EventArgs e)
+        {
+            game_timer.Enabled = true;
+
+            this.unPauseBtn.Visible = false;
+
+            this.pausePanel.Visible = false;
+
+        }
+
+        private void QuitBtn_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+            //Save score
+        }
+
+        private void MainQuitBtn_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
 
         }
     }

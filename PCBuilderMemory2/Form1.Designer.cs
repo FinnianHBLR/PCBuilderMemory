@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.game_timer = new System.Windows.Forms.Timer(this.components);
             this.pictureBox23 = new System.Windows.Forms.PictureBox();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
-            this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
@@ -56,9 +54,15 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.currentScore = new System.Windows.Forms.Label();
+            this.StartGameTemp = new System.Windows.Forms.Button();
+            this.unPauseBtn = new System.Windows.Forms.Button();
+            this.pausePanel = new System.Windows.Forms.Panel();
+            this.startPanle = new System.Windows.Forms.Panel();
+            this.pauseQuitBtn = new System.Windows.Forms.Button();
+            this.mainQuitBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
@@ -79,6 +83,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pausePanel.SuspendLayout();
+            this.startPanle.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -112,9 +118,10 @@
             this.checkedListBox1.TabIndex = 23;
             this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.CheckedListBox1_SelectedIndexChanged);
             // 
-            // timer1
+            // game_timer
             // 
-            this.timer1.Tick += new System.EventHandler(this.game_time);
+            this.game_timer.Interval = 1000;
+            this.game_timer.Tick += new System.EventHandler(this.game_time);
             // 
             // pictureBox23
             // 
@@ -125,6 +132,7 @@
             this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox23.TabIndex = 24;
             this.pictureBox23.TabStop = false;
+            this.pictureBox23.Click += new System.EventHandler(this.PictureBox23_Click);
             // 
             // pictureBox22
             // 
@@ -135,16 +143,6 @@
             this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox22.TabIndex = 21;
             this.pictureBox22.TabStop = false;
-            // 
-            // pictureBox21
-            // 
-            this.pictureBox21.Image = global::PCBuilderMemory2.Properties.Resources.cover;
-            this.pictureBox21.Location = new System.Drawing.Point(872, 543);
-            this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(152, 188);
-            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox21.TabIndex = 20;
-            this.pictureBox21.TabStop = false;
             // 
             // pictureBox16
             // 
@@ -228,7 +226,7 @@
             // 
             // pictureBox14
             // 
-            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
+            this.pictureBox14.Image = global::PCBuilderMemory2.Properties.Resources.cooling;
             this.pictureBox14.Location = new System.Drawing.Point(154, 378);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(121, 165);
@@ -278,7 +276,7 @@
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Image = global::PCBuilderMemory2.Properties.Resources._case;
             this.pictureBox9.Location = new System.Drawing.Point(154, 207);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(121, 165);
@@ -298,7 +296,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Image = global::PCBuilderMemory2.Properties.Resources.cooling;
             this.pictureBox5.Location = new System.Drawing.Point(575, 25);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(121, 165);
@@ -338,7 +336,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::PCBuilderMemory2.Properties.Resources._case;
             this.pictureBox1.Location = new System.Drawing.Point(12, 25);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(121, 165);
@@ -346,17 +344,87 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // currentScore
+            // 
+            this.currentScore.AutoSize = true;
+            this.currentScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentScore.Location = new System.Drawing.Point(1053, 39);
+            this.currentScore.Name = "currentScore";
+            this.currentScore.Size = new System.Drawing.Size(23, 25);
+            this.currentScore.TabIndex = 25;
+            this.currentScore.Text = "0";
+            // 
+            // StartGameTemp
+            // 
+            this.StartGameTemp.Location = new System.Drawing.Point(142, 106);
+            this.StartGameTemp.Name = "StartGameTemp";
+            this.StartGameTemp.Size = new System.Drawing.Size(75, 23);
+            this.StartGameTemp.TabIndex = 26;
+            this.StartGameTemp.Text = "Start";
+            this.StartGameTemp.UseVisualStyleBackColor = true;
+            this.StartGameTemp.Click += new System.EventHandler(this.StartGameTemp_Click);
+            // 
+            // unPauseBtn
+            // 
+            this.unPauseBtn.Location = new System.Drawing.Point(333, 165);
+            this.unPauseBtn.Name = "unPauseBtn";
+            this.unPauseBtn.Size = new System.Drawing.Size(75, 23);
+            this.unPauseBtn.TabIndex = 27;
+            this.unPauseBtn.Text = "Play";
+            this.unPauseBtn.UseVisualStyleBackColor = true;
+            this.unPauseBtn.Click += new System.EventHandler(this.UnPauseBtn_Click);
+            // 
+            // pausePanel
+            // 
+            this.pausePanel.Controls.Add(this.pauseQuitBtn);
+            this.pausePanel.Controls.Add(this.unPauseBtn);
+            this.pausePanel.Location = new System.Drawing.Point(617, 241);
+            this.pausePanel.Name = "pausePanel";
+            this.pausePanel.Size = new System.Drawing.Size(749, 359);
+            this.pausePanel.TabIndex = 29;
+            // 
+            // startPanle
+            // 
+            this.startPanle.Controls.Add(this.mainQuitBtn);
+            this.startPanle.Controls.Add(this.StartGameTemp);
+            this.startPanle.Location = new System.Drawing.Point(118, 90);
+            this.startPanle.Name = "startPanle";
+            this.startPanle.Size = new System.Drawing.Size(376, 221);
+            this.startPanle.TabIndex = 30;
+            // 
+            // pauseQuitBtn
+            // 
+            this.pauseQuitBtn.Location = new System.Drawing.Point(333, 224);
+            this.pauseQuitBtn.Name = "pauseQuitBtn";
+            this.pauseQuitBtn.Size = new System.Drawing.Size(75, 23);
+            this.pauseQuitBtn.TabIndex = 28;
+            this.pauseQuitBtn.Text = "Quit";
+            this.pauseQuitBtn.UseVisualStyleBackColor = true;
+            this.pauseQuitBtn.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // mainQuitBtn
+            // 
+            this.mainQuitBtn.Location = new System.Drawing.Point(142, 151);
+            this.mainQuitBtn.Name = "mainQuitBtn";
+            this.mainQuitBtn.Size = new System.Drawing.Size(75, 23);
+            this.mainQuitBtn.TabIndex = 27;
+            this.mainQuitBtn.Text = "Quit";
+            this.mainQuitBtn.UseVisualStyleBackColor = true;
+            this.mainQuitBtn.Click += new System.EventHandler(this.MainQuitBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1397, 750);
+            this.Controls.Add(this.startPanle);
+            this.Controls.Add(this.pausePanel);
+            this.Controls.Add(this.currentScore);
             this.Controls.Add(this.pictureBox23);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox22);
-            this.Controls.Add(this.pictureBox21);
             this.Controls.Add(this.pictureBox16);
             this.Controls.Add(this.pictureBox17);
             this.Controls.Add(this.pictureBox18);
@@ -382,7 +450,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
@@ -403,6 +470,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pausePanel.ResumeLayout(false);
+            this.startPanle.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,12 +499,18 @@
         private System.Windows.Forms.PictureBox pictureBox18;
         private System.Windows.Forms.PictureBox pictureBox19;
         private System.Windows.Forms.PictureBox pictureBox20;
-        private System.Windows.Forms.PictureBox pictureBox21;
         private System.Windows.Forms.PictureBox pictureBox22;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer game_timer;
         private System.Windows.Forms.PictureBox pictureBox23;
+        private System.Windows.Forms.Label currentScore;
+        private System.Windows.Forms.Button StartGameTemp;
+        private System.Windows.Forms.Button unPauseBtn;
+        private System.Windows.Forms.Panel pausePanel;
+        private System.Windows.Forms.Panel startPanle;
+        private System.Windows.Forms.Button pauseQuitBtn;
+        private System.Windows.Forms.Button mainQuitBtn;
     }
 }
 
