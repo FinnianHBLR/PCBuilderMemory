@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 using System.Drawing;
 
 
-namespace PCBuilderMemory
+namespace PCBuilderMemory2
 {
     class PartCard
     {
         //Properties
         private string name;
         // private int id; //card value
-        private string type; //Alive or not
+        private bool type; //Alive or not
         private bool flipStatus;
         private string partType;
-        private Image cardImage;
+        private Bitmap cardImage;
 
 
         //Constructors
 
-        public PartCard(string name, string type, bool flipStatus, string partType, Image cardImage)
+        public PartCard(string name, bool type, bool flipStatus, string partType, Bitmap cardImage)
         {
             this.name = name;
             this.type = type;
@@ -42,12 +42,12 @@ namespace PCBuilderMemory
             return this.name;
         }
 
-        public string getType()
+        public bool getType()
         {
             return this.type;
         }
 
-        public void setType(string type)
+        public void setType(bool type)
         {
             this.type = type;
         }
@@ -72,7 +72,7 @@ namespace PCBuilderMemory
             return this.flipStatus;
         }
 
-        public Image getImage()
+        public Bitmap getImage()
         {
             return this.cardImage;
         }

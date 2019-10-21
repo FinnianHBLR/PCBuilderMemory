@@ -32,6 +32,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.game_timer = new System.Windows.Forms.Timer(this.components);
+            this.currentScore = new System.Windows.Forms.Label();
+            this.StartGameTemp = new System.Windows.Forms.Button();
+            this.unPauseBtn = new System.Windows.Forms.Button();
+            this.pausePanel = new System.Windows.Forms.Panel();
+            this.startPanle = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.mainQuitBtn = new System.Windows.Forms.Button();
+            this.mainMenuBtn = new System.Windows.Forms.Button();
+            this.pauseQuitBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox23 = new System.Windows.Forms.PictureBox();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
@@ -54,18 +66,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.currentScore = new System.Windows.Forms.Label();
-            this.StartGameTemp = new System.Windows.Forms.Button();
-            this.unPauseBtn = new System.Windows.Forms.Button();
-            this.pausePanel = new System.Windows.Forms.Panel();
-            this.startPanle = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.mainQuitBtn = new System.Windows.Forms.Button();
-            this.mainMenuBtn = new System.Windows.Forms.Button();
-            this.pauseQuitBtn = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.pausePanel.SuspendLayout();
+            this.startPanle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
@@ -88,8 +90,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pausePanel.SuspendLayout();
-            this.startPanle.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -127,227 +127,6 @@
             // 
             this.game_timer.Interval = 1000;
             this.game_timer.Tick += new System.EventHandler(this.game_time);
-            // 
-            // pictureBox23
-            // 
-            this.pictureBox23.Image = global::PCBuilderMemory2.Properties.Resources.newPauseBtn;
-            this.pictureBox23.Location = new System.Drawing.Point(1300, 25);
-            this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(66, 61);
-            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox23.TabIndex = 24;
-            this.pictureBox23.TabStop = false;
-            this.pictureBox23.Click += new System.EventHandler(this.PictureBox23_Click);
-            // 
-            // pictureBox22
-            // 
-            this.pictureBox22.Image = global::PCBuilderMemory2.Properties.Resources.Untitled;
-            this.pictureBox22.Location = new System.Drawing.Point(1131, 25);
-            this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.Size = new System.Drawing.Size(147, 120);
-            this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox22.TabIndex = 21;
-            this.pictureBox22.TabStop = false;
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.Image = global::PCBuilderMemory2.Properties.Resources.os;
-            this.pictureBox16.Location = new System.Drawing.Point(575, 573);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(121, 165);
-            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox16.TabIndex = 19;
-            this.pictureBox16.TabStop = false;
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.Image = global::PCBuilderMemory2.Properties.Resources.gpu;
-            this.pictureBox17.Location = new System.Drawing.Point(434, 573);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(121, 165);
-            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox17.TabIndex = 18;
-            this.pictureBox17.TabStop = false;
-            // 
-            // pictureBox18
-            // 
-            this.pictureBox18.Image = global::PCBuilderMemory2.Properties.Resources.psu;
-            this.pictureBox18.Location = new System.Drawing.Point(294, 573);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(121, 165);
-            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox18.TabIndex = 17;
-            this.pictureBox18.TabStop = false;
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.Image = global::PCBuilderMemory2.Properties.Resources.motherboard;
-            this.pictureBox19.Location = new System.Drawing.Point(154, 573);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(121, 165);
-            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox19.TabIndex = 16;
-            this.pictureBox19.TabStop = false;
-            // 
-            // pictureBox20
-            // 
-            this.pictureBox20.Image = global::PCBuilderMemory2.Properties.Resources.cpu;
-            this.pictureBox20.Location = new System.Drawing.Point(12, 573);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(121, 165);
-            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox20.TabIndex = 15;
-            this.pictureBox20.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = global::PCBuilderMemory2.Properties.Resources.cpu;
-            this.pictureBox11.Location = new System.Drawing.Point(575, 378);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(121, 165);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox11.TabIndex = 14;
-            this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Image = global::PCBuilderMemory2.Properties.Resources.psu;
-            this.pictureBox12.Location = new System.Drawing.Point(434, 378);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(121, 165);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox12.TabIndex = 13;
-            this.pictureBox12.TabStop = false;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = global::PCBuilderMemory2.Properties.Resources.os;
-            this.pictureBox13.Location = new System.Drawing.Point(294, 378);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(121, 165);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox13.TabIndex = 12;
-            this.pictureBox13.TabStop = false;
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.Image = global::PCBuilderMemory2.Properties.Resources.cooling;
-            this.pictureBox14.Location = new System.Drawing.Point(154, 378);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(121, 165);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox14.TabIndex = 11;
-            this.pictureBox14.TabStop = false;
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.Image = global::PCBuilderMemory2.Properties.Resources.gpu;
-            this.pictureBox15.Location = new System.Drawing.Point(12, 378);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(121, 165);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox15.TabIndex = 10;
-            this.pictureBox15.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::PCBuilderMemory2.Properties.Resources.network;
-            this.pictureBox6.Location = new System.Drawing.Point(575, 207);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(121, 165);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 9;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::PCBuilderMemory2.Properties.Resources.motherboard;
-            this.pictureBox7.Location = new System.Drawing.Point(434, 207);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(121, 165);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 8;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::PCBuilderMemory2.Properties.Resources.ram;
-            this.pictureBox8.Location = new System.Drawing.Point(294, 207);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(121, 165);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 7;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::PCBuilderMemory2.Properties.Resources._case;
-            this.pictureBox9.Location = new System.Drawing.Point(154, 207);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(121, 165);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 6;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = global::PCBuilderMemory2.Properties.Resources.ram;
-            this.pictureBox10.Location = new System.Drawing.Point(12, 207);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(121, 165);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox10.TabIndex = 5;
-            this.pictureBox10.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::PCBuilderMemory2.Properties.Resources.cooling;
-            this.pictureBox5.Location = new System.Drawing.Point(575, 25);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(121, 165);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 4;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::PCBuilderMemory2.Properties.Resources.ssd;
-            this.pictureBox4.Location = new System.Drawing.Point(434, 25);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(121, 165);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::PCBuilderMemory2.Properties.Resources.ssd;
-            this.pictureBox3.Location = new System.Drawing.Point(294, 25);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(121, 165);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::PCBuilderMemory2.Properties.Resources.network;
-            this.pictureBox2.Location = new System.Drawing.Point(154, 25);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(121, 165);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PCBuilderMemory2.Properties.Resources._case;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 165);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // currentScore
             // 
@@ -392,8 +171,7 @@
             this.pausePanel.Controls.Add(this.pauseQuitBtn);
             this.pausePanel.Controls.Add(this.unPauseBtn);
             this.pausePanel.Controls.Add(this.label2);
-            this.pausePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pausePanel.Location = new System.Drawing.Point(0, 0);
+            this.pausePanel.Location = new System.Drawing.Point(888, 207);
             this.pausePanel.Name = "pausePanel";
             this.pausePanel.Size = new System.Drawing.Size(1397, 750);
             this.pausePanel.TabIndex = 29;
@@ -405,11 +183,30 @@
             this.startPanle.Controls.Add(this.label3);
             this.startPanle.Controls.Add(this.mainQuitBtn);
             this.startPanle.Controls.Add(this.StartGameTemp);
-            this.startPanle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.startPanle.Location = new System.Drawing.Point(0, 0);
+            this.startPanle.Location = new System.Drawing.Point(45, 178);
             this.startPanle.Name = "startPanle";
             this.startPanle.Size = new System.Drawing.Size(1397, 750);
             this.startPanle.TabIndex = 30;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1165, 201);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(158, 34);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Top Scores";
+            // 
+            // listBox1
+            // 
+            this.listBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 23;
+            this.listBox1.Location = new System.Drawing.Point(1126, 236);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(240, 303);
+            this.listBox1.TabIndex = 29;
             // 
             // label3
             // 
@@ -471,25 +268,246 @@
             this.label2.Text = "PCBuilder Memory";
             this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
-            // listBox1
+            // pictureBox23
             // 
-            this.listBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 23;
-            this.listBox1.Location = new System.Drawing.Point(1126, 236);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(240, 303);
-            this.listBox1.TabIndex = 29;
+            this.pictureBox23.Image = global::PCBuilderMemory2.Properties.Resources.newPauseBtn;
+            this.pictureBox23.Location = new System.Drawing.Point(1300, 25);
+            this.pictureBox23.Name = "pictureBox23";
+            this.pictureBox23.Size = new System.Drawing.Size(66, 61);
+            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox23.TabIndex = 24;
+            this.pictureBox23.TabStop = false;
+            this.pictureBox23.Click += new System.EventHandler(this.PictureBox23_Click);
             // 
-            // label4
+            // pictureBox22
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1165, 201);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(158, 34);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Top Scores";
+            this.pictureBox22.Image = global::PCBuilderMemory2.Properties.Resources.Untitled;
+            this.pictureBox22.Location = new System.Drawing.Point(1131, 25);
+            this.pictureBox22.Name = "pictureBox22";
+            this.pictureBox22.Size = new System.Drawing.Size(147, 120);
+            this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox22.TabIndex = 21;
+            this.pictureBox22.TabStop = false;
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Image = global::PCBuilderMemory2.Properties.Resources.cover;
+            this.pictureBox16.Location = new System.Drawing.Point(575, 573);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(121, 165);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox16.TabIndex = 19;
+            this.pictureBox16.TabStop = false;
+            this.pictureBox16.Click += new System.EventHandler(this.PictureBox16_Click);
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.Image = global::PCBuilderMemory2.Properties.Resources.cover;
+            this.pictureBox17.Location = new System.Drawing.Point(434, 573);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(121, 165);
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox17.TabIndex = 18;
+            this.pictureBox17.TabStop = false;
+            this.pictureBox17.Click += new System.EventHandler(this.PictureBox17_Click);
+            // 
+            // pictureBox18
+            // 
+            this.pictureBox18.Image = global::PCBuilderMemory2.Properties.Resources.cover;
+            this.pictureBox18.Location = new System.Drawing.Point(294, 573);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(121, 165);
+            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox18.TabIndex = 17;
+            this.pictureBox18.TabStop = false;
+            this.pictureBox18.Click += new System.EventHandler(this.PictureBox18_Click);
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.Image = global::PCBuilderMemory2.Properties.Resources.cover;
+            this.pictureBox19.Location = new System.Drawing.Point(154, 573);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(121, 165);
+            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox19.TabIndex = 16;
+            this.pictureBox19.TabStop = false;
+            this.pictureBox19.Click += new System.EventHandler(this.PictureBox19_Click);
+            // 
+            // pictureBox20
+            // 
+            this.pictureBox20.Image = global::PCBuilderMemory2.Properties.Resources.cover;
+            this.pictureBox20.Location = new System.Drawing.Point(12, 573);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(121, 165);
+            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox20.TabIndex = 15;
+            this.pictureBox20.TabStop = false;
+            this.pictureBox20.Click += new System.EventHandler(this.PictureBox20_Click);
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = global::PCBuilderMemory2.Properties.Resources.cover;
+            this.pictureBox11.Location = new System.Drawing.Point(575, 378);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(121, 165);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 14;
+            this.pictureBox11.TabStop = false;
+            this.pictureBox11.Click += new System.EventHandler(this.PictureBox11_Click);
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Image = global::PCBuilderMemory2.Properties.Resources.cover;
+            this.pictureBox12.Location = new System.Drawing.Point(434, 378);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(121, 165);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox12.TabIndex = 13;
+            this.pictureBox12.TabStop = false;
+            this.pictureBox12.Click += new System.EventHandler(this.PictureBox12_Click);
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = global::PCBuilderMemory2.Properties.Resources.cover;
+            this.pictureBox13.Location = new System.Drawing.Point(294, 378);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(121, 165);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox13.TabIndex = 12;
+            this.pictureBox13.TabStop = false;
+            this.pictureBox13.Click += new System.EventHandler(this.PictureBox13_Click);
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Image = global::PCBuilderMemory2.Properties.Resources.cover;
+            this.pictureBox14.Location = new System.Drawing.Point(154, 378);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(121, 165);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox14.TabIndex = 11;
+            this.pictureBox14.TabStop = false;
+            this.pictureBox14.Click += new System.EventHandler(this.PictureBox14_Click);
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.Image = global::PCBuilderMemory2.Properties.Resources.cover;
+            this.pictureBox15.Location = new System.Drawing.Point(12, 378);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(121, 165);
+            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox15.TabIndex = 10;
+            this.pictureBox15.TabStop = false;
+            this.pictureBox15.Click += new System.EventHandler(this.PictureBox15_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::PCBuilderMemory2.Properties.Resources.cover;
+            this.pictureBox6.Location = new System.Drawing.Point(575, 207);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(121, 165);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 9;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.PictureBox6_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::PCBuilderMemory2.Properties.Resources.cover;
+            this.pictureBox7.Location = new System.Drawing.Point(434, 207);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(121, 165);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 8;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.PictureBox7_Click);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::PCBuilderMemory2.Properties.Resources.cover;
+            this.pictureBox8.Location = new System.Drawing.Point(294, 207);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(121, 165);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 7;
+            this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.PictureBox8_Click);
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::PCBuilderMemory2.Properties.Resources.cover;
+            this.pictureBox9.Location = new System.Drawing.Point(154, 207);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(121, 165);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 6;
+            this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.PictureBox9_Click);
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::PCBuilderMemory2.Properties.Resources.cover;
+            this.pictureBox10.Location = new System.Drawing.Point(12, 207);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(121, 165);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox10.TabIndex = 5;
+            this.pictureBox10.TabStop = false;
+            this.pictureBox10.Click += new System.EventHandler(this.PictureBox10_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::PCBuilderMemory2.Properties.Resources.cover;
+            this.pictureBox5.Location = new System.Drawing.Point(575, 25);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(121, 165);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 4;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.PictureBox5_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::PCBuilderMemory2.Properties.Resources.cover;
+            this.pictureBox4.Location = new System.Drawing.Point(434, 25);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(121, 165);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.PictureBox4_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::PCBuilderMemory2.Properties.Resources.cover;
+            this.pictureBox3.Location = new System.Drawing.Point(294, 25);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(121, 165);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.PictureBox3_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PCBuilderMemory2.Properties.Resources.cover;
+            this.pictureBox2.Location = new System.Drawing.Point(154, 25);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(121, 165);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PCBuilderMemory2.Properties.Resources.cover;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(121, 165);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // Form1
             // 
@@ -526,6 +544,10 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.pausePanel.ResumeLayout(false);
+            this.pausePanel.PerformLayout();
+            this.startPanle.ResumeLayout(false);
+            this.startPanle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
@@ -548,10 +570,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pausePanel.ResumeLayout(false);
-            this.pausePanel.PerformLayout();
-            this.startPanle.ResumeLayout(false);
-            this.startPanle.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

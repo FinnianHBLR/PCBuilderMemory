@@ -1,19 +1,64 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PCBuilderMemory
+
+namespace PCBuilderMemory2
 {
     class Deck
     {
         //Properties
         private List<PartCard> deck = new List<PartCard>();
 
-        //Constructors
 
-        //Create New List of 20 Cards
+        //Constructors
+        public Deck()
+        {
+            deck = new List<PartCard>
+            {
+            new PartCard("1", false, false, "CPU", Properties.Resources.cpu),
+            new PartCard("2", false, false, "COOLING", Properties.Resources.cooling),
+            new PartCard("3", false, false, "MOTHERBOARD", Properties.Resources.motherboard),
+            new PartCard("4", false, false, "MEMORY", Properties.Resources.ram),
+            new PartCard("5", false, false, "GPU", Properties.Resources.gpu),
+            new PartCard("6", false, false, "CASE", Properties.Resources._case),
+            new PartCard("7", false, false, "PSU", Properties.Resources.psu),
+            new PartCard("8", false, false, "OS", Properties.Resources.os),
+            new PartCard("9", false, false, "NETWORK", Properties.Resources.network),
+            new PartCard("10", false, false, "STORAGE", Properties.Resources.ssd),
+
+            new PartCard("1", false, false, "CPU", Properties.Resources.cpu),
+            new PartCard("2", false, false, "COOLING", Properties.Resources.cooling),
+            new PartCard("3", false, false, "MOTHERBOARD", Properties.Resources.motherboard),
+            new PartCard("4", false, false, "MEMORY", Properties.Resources.ram),
+            new PartCard("5", false, false, "GPU", Properties.Resources.gpu),
+            new PartCard("6", false, false, "CASE", Properties.Resources._case),
+            new PartCard("7", false, false, "PSU", Properties.Resources.psu),
+            new PartCard("8", false, false, "OS", Properties.Resources.os),
+            new PartCard("9", false, false, "NETWORK", Properties.Resources.network),
+            new PartCard("10", false, false, "STORAGE", Properties.Resources.ssd),
+
+            };
+            shuffle();
+        }
+
+
+        //Create New List of 10 Cards
+
+        public List<PartCard> GetPartCards()
+        {
+            return deck;
+        }
+
+
+
+
+
+
 
         //Methods
         public void add(PartCard card)
