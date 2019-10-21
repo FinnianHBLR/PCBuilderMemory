@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.gameListParts = new System.Windows.Forms.CheckedListBox();
             this.game_timer = new System.Windows.Forms.Timer(this.components);
             this.currentScore = new System.Windows.Forms.Label();
             this.StartGameTemp = new System.Windows.Forms.Button();
@@ -102,11 +102,11 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "Current Score:";
             // 
-            // checkedListBox1
+            // gameListParts
             // 
-            this.checkedListBox1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.gameListParts.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameListParts.FormattingEnabled = true;
+            this.gameListParts.Items.AddRange(new object[] {
             "CPU",
             "Cooling",
             "Motherboard",
@@ -117,11 +117,10 @@
             "OS",
             "Network",
             "Storage"});
-            this.checkedListBox1.Location = new System.Drawing.Point(1183, 301);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(202, 394);
-            this.checkedListBox1.TabIndex = 23;
-            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.CheckedListBox1_SelectedIndexChanged);
+            this.gameListParts.Location = new System.Drawing.Point(1183, 301);
+            this.gameListParts.Name = "gameListParts";
+            this.gameListParts.Size = new System.Drawing.Size(202, 394);
+            this.gameListParts.TabIndex = 23;
             // 
             // game_timer
             // 
@@ -171,7 +170,8 @@
             this.pausePanel.Controls.Add(this.pauseQuitBtn);
             this.pausePanel.Controls.Add(this.unPauseBtn);
             this.pausePanel.Controls.Add(this.label2);
-            this.pausePanel.Location = new System.Drawing.Point(888, 207);
+            this.pausePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pausePanel.Location = new System.Drawing.Point(0, 0);
             this.pausePanel.Name = "pausePanel";
             this.pausePanel.Size = new System.Drawing.Size(1397, 750);
             this.pausePanel.TabIndex = 29;
@@ -183,7 +183,8 @@
             this.startPanle.Controls.Add(this.label3);
             this.startPanle.Controls.Add(this.mainQuitBtn);
             this.startPanle.Controls.Add(this.StartGameTemp);
-            this.startPanle.Location = new System.Drawing.Point(45, 178);
+            this.startPanle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.startPanle.Location = new System.Drawing.Point(0, 0);
             this.startPanle.Name = "startPanle";
             this.startPanle.Size = new System.Drawing.Size(1397, 750);
             this.startPanle.TabIndex = 30;
@@ -518,7 +519,7 @@
             this.Controls.Add(this.pausePanel);
             this.Controls.Add(this.currentScore);
             this.Controls.Add(this.pictureBox23);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.gameListParts);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox22);
             this.Controls.Add(this.pictureBox16);
@@ -599,7 +600,7 @@
         private System.Windows.Forms.PictureBox pictureBox20;
         private System.Windows.Forms.PictureBox pictureBox22;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox gameListParts;
         private System.Windows.Forms.Timer game_timer;
         private System.Windows.Forms.PictureBox pictureBox23;
         private System.Windows.Forms.Label currentScore;
