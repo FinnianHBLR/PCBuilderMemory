@@ -13,21 +13,25 @@ namespace PCBuilderMemory2
     public partial class Form1 : Form
     {
         List<PictureBox> pictureBoxes;
-        GameManager gameManager = new GameManager();
+
+        //Create new Deck
+        Deck deck = new Deck();
 
         //Creates a list with 2 in it.
-        List<PictureBox> flippedBoxes = new List<PictureBox>(2);
+        List<PictureBox> flippedBoxes = new List<PictureBox>(2);//To keep track of what cards are flipped
 
         //Int for keeping flip time
-        private int flipTime = 0;
+        private int flipTime = 0; //Initilaize fliptime
         private int matched = 0;
+
+
 
         public Form1()
         {
             InitializeComponent();
 
 
-
+            //Create new picture boxes
             pictureBoxes = new List<PictureBox>()
             {
                 this.pictureBox1,
@@ -57,54 +61,88 @@ namespace PCBuilderMemory2
         }
 
 
-
         private void game_time(object sender, EventArgs e)
         {
             int currentTime = Convert.ToInt32(currentScore.Text);
             //Gets time from label
 
             currentTime++;
+            //Adds time to label
 
             currentScore.Text = currentTime.ToString();
-
 
             //Flipping or removing cards
 
             if (flippedBoxes.Count == 2)
             {
+                //Checks if 2 cards are flipped
                 if (flipTime == 0)
                 {
-                    //Check if same
+                    //Get first and second indexes to identify cards from the list of flipped cards (These are added from the click event)
                     int firstIndex = Convert.ToInt32(flippedBoxes[0].Name.Substring("PictureBox".Length)) - 1;
 
                     int secondIndex = Convert.ToInt32(flippedBoxes[1].Name.Substring("PictureBox".Length)) - 1;
 
-                    if (gameManager.Deck.GetPartCards()[firstIndex].getPartType() == gameManager.Deck.GetPartCards()[secondIndex].getPartType())
+                    //Gets the part types from each card and compares, eg "CPU" == "CPU"
+                    if (Deck.GetPartCards()[firstIndex].getPartType() == Deck.GetPartCards()[secondIndex].getPartType())
                     {
                         matched++;
+                        //Hides cards if they are equal
                         flippedBoxes[0].Visible = false;
                         flippedBoxes[1].Visible = false;
 
-                        gameListParts.CheckedItems.//THis is list for items
-
+                        //ADD TO LIST OF PARTS use partype
+                        switch (Deck.GetPartCards()[firstIndex].getPartType())
+                        {
+                            case "CPU":
+                                gameListParts.Items.Add("CPU", CheckState.Checked);
+                                break;
+                            case "COOLING":
+                                gameListParts.Items.Add("Cooling", CheckState.Checked);
+                                break;
+                            case "MOTHERBOARD":
+                                gameListParts.Items.Add("Motherboard", CheckState.Checked);
+                                break;
+                            case "MEMORY":
+                                gameListParts.Items.Add("Memory", CheckState.Checked);
+                                break;
+                            case "GPU":
+                                gameListParts.Items.Add("GPU", CheckState.Checked);
+                                break;
+                            case "CASE":
+                                gameListParts.Items.Add("Case", CheckState.Checked);
+                                break;
+                            case "PSU":
+                                gameListParts.Items.Add("Power Supply", CheckState.Checked);
+                                break;
+                            case "OS":
+                                gameListParts.Items.Add("Operrating System", CheckState.Checked);
+                                break;
+                            case "NETWORK":
+                                gameListParts.Items.Add("Networking", CheckState.Checked);
+                                break;
+                            case "STORAGE":
+                                gameListParts.Items.Add("Storage", CheckState.Checked);
+                                break;
+                        }
                     }
                     else
                     {
-
+                        //Else reset the card to cover
                         flippedBoxes[0].Image = Properties.Resources.cover;
                         flippedBoxes[1].Image = Properties.Resources.cover;
 
-                        flippedBoxes.Remove(flippedBoxes[0]);
-                        flippedBoxes.Remove(flippedBoxes[0]); //Remove the first one, then the second one goes into the first spot is
-
                     }
+                    //Fliptime sets how long the card will stay up
                     flipTime = 3;
 
+                    flippedBoxes.Remove(flippedBoxes[0]);
+                    flippedBoxes.Remove(flippedBoxes[0]); //Remove the first one, then the second one goes into the first spot is
+
                 }
+                //Each time clock ticks removes one from flip time
                 flipTime--;
             }
-
-
         }
 
         private void PictureBox23_Click(object sender, EventArgs e)
@@ -122,22 +160,24 @@ namespace PCBuilderMemory2
 
             this.pausePanel.Visible = false;
 
-
+            //Resets the score
             currentScore.Text = "0";
 
+            //Enables timer
             game_timer.Enabled = true;
 
             this.startPanle.Visible = false;
 
             //Shuffle
 
-
         }
 
         private void UnPauseBtn_Click(object sender, EventArgs e)
         {
+            //Starts game timer
             game_timer.Enabled = true;
 
+            //Hides buttons, may not be needed
             this.unPauseBtn.Visible = false;
 
             this.pausePanel.Visible = false;
@@ -151,14 +191,15 @@ namespace PCBuilderMemory2
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            //Exits window
             System.Windows.Forms.Application.Exit();
-            //Save score
+            //Will need to Save scores
         }
 
         private void MainQuitBtn_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
-
+            //Quits application
         }
 
         private void MainMenuBtn_Click(object sender, EventArgs e)
@@ -175,10 +216,14 @@ namespace PCBuilderMemory2
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
+            //If there are two cards flipped this will stop the user flipping more
             if (flippedBoxes.Count < 2)
             {
-                pictureBox1.Image = gameManager.Deck.GetPartCards()[0].getImage();
-                gameManager.Deck.GetPartCards()[0].setFlipStatus(true);
+                //Get part names from Deck
+                pictureBox1.Image = Deck.GetPartCards()[0].getImage();
+                //Sets flip status to true in its object
+                Deck.GetPartCards()[0].setFlipStatus(true);
+                //Adds card to list of cards in use to comapre them
                 flippedBoxes.Add(pictureBox1);
             }
         }
@@ -187,8 +232,8 @@ namespace PCBuilderMemory2
         {
             if (flippedBoxes.Count < 2)
             {
-                pictureBox2.Image = gameManager.Deck.GetPartCards()[1].getImage();
-                gameManager.Deck.GetPartCards()[1].setFlipStatus(true);
+                pictureBox2.Image = Deck.GetPartCards()[1].getImage();
+                Deck.GetPartCards()[1].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox2);
             }
         }
@@ -198,8 +243,8 @@ namespace PCBuilderMemory2
             if (flippedBoxes.Count < 2)
             {
 
-                pictureBox3.Image = gameManager.Deck.GetPartCards()[2].getImage();
-                gameManager.Deck.GetPartCards()[2].setFlipStatus(true);
+                pictureBox3.Image = Deck.GetPartCards()[2].getImage();
+                Deck.GetPartCards()[2].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox3);
             }
         }
@@ -207,8 +252,8 @@ namespace PCBuilderMemory2
         {
             if (flippedBoxes.Count < 2)
             {
-                pictureBox4.Image = gameManager.Deck.GetPartCards()[3].getImage();
-                gameManager.Deck.GetPartCards()[3].setFlipStatus(true);
+                pictureBox4.Image = Deck.GetPartCards()[3].getImage();
+                Deck.GetPartCards()[3].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox4);
             }
         }
@@ -217,8 +262,8 @@ namespace PCBuilderMemory2
         {
             if (flippedBoxes.Count < 2)
             {
-                pictureBox5.Image = gameManager.Deck.GetPartCards()[4].getImage();
-                gameManager.Deck.GetPartCards()[4].setFlipStatus(true);
+                pictureBox5.Image = Deck.GetPartCards()[4].getImage();
+                Deck.GetPartCards()[4].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox5);
             }
         }
@@ -227,8 +272,8 @@ namespace PCBuilderMemory2
         {
             if (flippedBoxes.Count < 2)
             {
-                pictureBox10.Image = gameManager.Deck.GetPartCards()[9].getImage();
-                gameManager.Deck.GetPartCards()[9].setFlipStatus(true);
+                pictureBox10.Image = Deck.GetPartCards()[9].getImage();
+                Deck.GetPartCards()[9].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox10);
             }
         }
@@ -238,8 +283,8 @@ namespace PCBuilderMemory2
             if (flippedBoxes.Count < 2)
             {
 
-                pictureBox9.Image = gameManager.Deck.GetPartCards()[8].getImage();
-                gameManager.Deck.GetPartCards()[8].setFlipStatus(true);
+                pictureBox9.Image = Deck.GetPartCards()[8].getImage();
+                Deck.GetPartCards()[8].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox9);
             }
         }
@@ -248,8 +293,8 @@ namespace PCBuilderMemory2
         {
             if (flippedBoxes.Count < 2)
             {
-                pictureBox8.Image = gameManager.Deck.GetPartCards()[7].getImage();
-                gameManager.Deck.GetPartCards()[7].setFlipStatus(true);
+                pictureBox8.Image = Deck.GetPartCards()[7].getImage();
+                Deck.GetPartCards()[7].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox8);
             }
         }
@@ -258,8 +303,8 @@ namespace PCBuilderMemory2
         {
             if (flippedBoxes.Count < 2)
             {
-                pictureBox7.Image = gameManager.Deck.GetPartCards()[6].getImage();
-                gameManager.Deck.GetPartCards()[6].setFlipStatus(true);
+                pictureBox7.Image = Deck.GetPartCards()[6].getImage();
+                Deck.GetPartCards()[6].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox7);
             }
         }
@@ -268,8 +313,8 @@ namespace PCBuilderMemory2
         {
             if (flippedBoxes.Count < 2)
             {
-                pictureBox6.Image = gameManager.Deck.GetPartCards()[5].getImage();
-                gameManager.Deck.GetPartCards()[5].setFlipStatus(true);
+                pictureBox6.Image = Deck.GetPartCards()[5].getImage();
+                Deck.GetPartCards()[5].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox6);
             }
         }
@@ -278,8 +323,8 @@ namespace PCBuilderMemory2
         {
             if (flippedBoxes.Count < 2)
             {
-                pictureBox15.Image = gameManager.Deck.GetPartCards()[14].getImage();
-                gameManager.Deck.GetPartCards()[14].setFlipStatus(true);
+                pictureBox15.Image = Deck.GetPartCards()[14].getImage();
+                Deck.GetPartCards()[14].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox15);
             }
         }
@@ -288,8 +333,8 @@ namespace PCBuilderMemory2
         {
             if (flippedBoxes.Count < 2)
             {
-                pictureBox14.Image = gameManager.Deck.GetPartCards()[13].getImage();
-                gameManager.Deck.GetPartCards()[13].setFlipStatus(true);
+                pictureBox14.Image = Deck.GetPartCards()[13].getImage();
+                Deck.GetPartCards()[13].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox14);
             }
         }
@@ -298,8 +343,8 @@ namespace PCBuilderMemory2
         {
             if (flippedBoxes.Count < 2)
             {
-                pictureBox13.Image = gameManager.Deck.GetPartCards()[12].getImage();
-                gameManager.Deck.GetPartCards()[12].setFlipStatus(true);
+                pictureBox13.Image = Deck.GetPartCards()[12].getImage();
+                Deck.GetPartCards()[12].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox13);
             }
         }
@@ -308,8 +353,8 @@ namespace PCBuilderMemory2
         {
             if (flippedBoxes.Count < 2)
             {
-                pictureBox12.Image = gameManager.Deck.GetPartCards()[11].getImage();
-                gameManager.Deck.GetPartCards()[11].setFlipStatus(true);
+                pictureBox12.Image = Deck.GetPartCards()[11].getImage();
+                Deck.GetPartCards()[11].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox12);
             }
         }
@@ -318,8 +363,8 @@ namespace PCBuilderMemory2
         {
             if (flippedBoxes.Count < 2)
             {
-                pictureBox11.Image = gameManager.Deck.GetPartCards()[10].getImage();
-                gameManager.Deck.GetPartCards()[10].setFlipStatus(true);
+                pictureBox11.Image = Deck.GetPartCards()[10].getImage();
+                Deck.GetPartCards()[10].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox11);
             }
         }
@@ -328,8 +373,8 @@ namespace PCBuilderMemory2
         {
             if (flippedBoxes.Count < 2)
             {
-                pictureBox20.Image = gameManager.Deck.GetPartCards()[19].getImage();
-                gameManager.Deck.GetPartCards()[19].setFlipStatus(true);
+                pictureBox20.Image = Deck.GetPartCards()[19].getImage();
+                Deck.GetPartCards()[19].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox20);
             }
         }
@@ -338,8 +383,8 @@ namespace PCBuilderMemory2
         {
             if (flippedBoxes.Count < 2)
             {
-                pictureBox19.Image = gameManager.Deck.GetPartCards()[16].getImage();
-                gameManager.Deck.GetPartCards()[16].setFlipStatus(true);
+                pictureBox19.Image = Deck.GetPartCards()[16].getImage();
+                Deck.GetPartCards()[16].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox19);
             }
         }
@@ -348,8 +393,8 @@ namespace PCBuilderMemory2
         {
             if (flippedBoxes.Count < 2)
             {
-                pictureBox18.Image = gameManager.Deck.GetPartCards()[17].getImage();
-                gameManager.Deck.GetPartCards()[17].setFlipStatus(true);
+                pictureBox18.Image = Deck.GetPartCards()[17].getImage();
+                Deck.GetPartCards()[17].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox18);
             }
         }
@@ -358,8 +403,8 @@ namespace PCBuilderMemory2
         {
             if (flippedBoxes.Count < 2)
             {
-                pictureBox17.Image = gameManager.Deck.GetPartCards()[18].getImage();
-                gameManager.Deck.GetPartCards()[18].setFlipStatus(true);
+                pictureBox17.Image = Deck.GetPartCards()[18].getImage();
+                Deck.GetPartCards()[18].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox17);
             }
         }
@@ -368,8 +413,8 @@ namespace PCBuilderMemory2
         {
             if (flippedBoxes.Count < 2)
             {
-                pictureBox16.Image = gameManager.Deck.GetPartCards()[19].getImage();
-                gameManager.Deck.GetPartCards()[19].setFlipStatus(true);
+                pictureBox16.Image = Deck.GetPartCards()[19].getImage();
+                Deck.GetPartCards()[19].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox16);
             }
         }

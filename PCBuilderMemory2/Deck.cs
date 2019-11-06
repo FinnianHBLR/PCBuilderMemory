@@ -18,6 +18,7 @@ namespace PCBuilderMemory2
         //Constructors
         public Deck()
         {
+            //Creates new list of cards 
             deck = new List<PartCard>
             {
             new PartCard("1", false, false, "CPU", Properties.Resources.cpu),
@@ -51,23 +52,21 @@ namespace PCBuilderMemory2
 
         public List<PartCard> GetPartCards()
         {
+            //Returns the entire Deck
             return deck;
         }
-
-
-
-
-
 
 
         //Methods
         public void add(PartCard card)
         {
+            //Adds card to deck
             this.deck.Add(card);
         }
 
         public void remove(PartCard part)
         {
+            //Removes card from deck
             foreach (PartCard partCard in deck)
             {
                 if (part.getName() == part.getName())

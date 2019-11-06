@@ -106,17 +106,6 @@
             // 
             this.gameListParts.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gameListParts.FormattingEnabled = true;
-            this.gameListParts.Items.AddRange(new object[] {
-            "CPU",
-            "Cooling",
-            "Motherboard",
-            "Memory",
-            "GPU",
-            "Case",
-            "Power Supply",
-            "OS",
-            "Network",
-            "Storage"});
             this.gameListParts.Location = new System.Drawing.Point(1183, 301);
             this.gameListParts.Name = "gameListParts";
             this.gameListParts.Size = new System.Drawing.Size(202, 394);

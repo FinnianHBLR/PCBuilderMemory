@@ -12,7 +12,7 @@ namespace PCBuilderMemory2
     {
         //Properties
         private string name;
-        // private int id; //card value
+        // private int id; //card value no longer needed because the card identifican it tied with partType
         private bool type; //Alive or not
         private bool flipStatus;
         private string partType;
