@@ -12,7 +12,7 @@ namespace PCBuilderMemory2
     class Deck
     {
         //Properties
-        private List<PartCard> deck = new List<PartCard>();
+        static List<PartCard> deck = new List<PartCard>();
 
 
         //Constructors
@@ -61,7 +61,7 @@ namespace PCBuilderMemory2
         public void add(PartCard card)
         {
             //Adds card to deck
-            this.deck.Add(card);
+            deck.Add(card);
         }
 
         public void remove(PartCard part)
@@ -71,7 +71,7 @@ namespace PCBuilderMemory2
             {
                 if (part.getName() == part.getName())
                 {
-                    this.deck.Remove(partCard);
+                    deck.Remove(partCard);
                 }
             }
         }

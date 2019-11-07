@@ -18,11 +18,13 @@ namespace PCBuilderMemory2
         Deck deck = new Deck();
 
         //Creates a list with 2 in it.
-        List<PictureBox> flippedBoxes = new List<PictureBox>(2);//To keep track of what cards are flipped
+        List<PictureBox> flippedBoxes = new List<PictureBox>();//To keep track of what cards are flipped
 
         //Int for keeping flip time
         private int flipTime = 0; //Initilaize fliptime
         private int matched = 0;
+
+        private int cardCount = 0;
 
 
 
@@ -84,7 +86,7 @@ namespace PCBuilderMemory2
                     int secondIndex = Convert.ToInt32(flippedBoxes[1].Name.Substring("PictureBox".Length)) - 1;
 
                     //Gets the part types from each card and compares, eg "CPU" == "CPU"
-                    if (Deck.GetPartCards()[firstIndex].getPartType() == Deck.GetPartCards()[secondIndex].getPartType())
+                    if (deck.GetPartCards()[firstIndex].getPartType() == deck.GetPartCards()[secondIndex].getPartType())
                     {
                         matched++;
                         //Hides cards if they are equal
@@ -92,7 +94,7 @@ namespace PCBuilderMemory2
                         flippedBoxes[1].Visible = false;
 
                         //ADD TO LIST OF PARTS use partype
-                        switch (Deck.GetPartCards()[firstIndex].getPartType())
+                        switch (deck.GetPartCards()[firstIndex].getPartType())
                         {
                             case "CPU":
                                 gameListParts.Items.Add("CPU", CheckState.Checked);
@@ -143,10 +145,20 @@ namespace PCBuilderMemory2
                 //Each time clock ticks removes one from flip time
                 flipTime--;
             }
+            if (gameListParts.Items.Count == 1)
+            {
+                //END GAME CONDITIONS
+                game_timer.Enabled = false;
+
+                endScreen.Show();
+
+
+            }
         }
 
         private void PictureBox23_Click(object sender, EventArgs e)
         {
+            //Pause BTN
             game_timer.Enabled = false;
 
             this.unPauseBtn.Visible = true;
@@ -213,16 +225,17 @@ namespace PCBuilderMemory2
         {
 
         }
-
+        //NOTE: I cloud use a method for the code below. But I will not do this as I have already gone ahead wit the indicidual methods
         private void PictureBox1_Click(object sender, EventArgs e)
         {
+
             //If there are two cards flipped this will stop the user flipping more
-            if (flippedBoxes.Count < 2)
+            if (flippedBoxes.Count < 2 && !flippedBoxes.Contains(pictureBox1))
             {
-                //Get part names from Deck
-                pictureBox1.Image = Deck.GetPartCards()[0].getImage();
+                //Get part names from deck
+                pictureBox1.Image = deck.GetPartCards()[0].getImage();
                 //Sets flip status to true in its object
-                Deck.GetPartCards()[0].setFlipStatus(true);
+                deck.GetPartCards()[0].setFlipStatus(true);
                 //Adds card to list of cards in use to comapre them
                 flippedBoxes.Add(pictureBox1);
             }
@@ -230,193 +243,208 @@ namespace PCBuilderMemory2
 
         private void PictureBox2_Click(object sender, EventArgs e)
         {
-            if (flippedBoxes.Count < 2)
+            if (flippedBoxes.Count < 2 && !flippedBoxes.Contains(pictureBox2))
             {
-                pictureBox2.Image = Deck.GetPartCards()[1].getImage();
-                Deck.GetPartCards()[1].setFlipStatus(true);
+                pictureBox2.Image = deck.GetPartCards()[1].getImage();
+                deck.GetPartCards()[1].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox2);
             }
         }
 
         private void PictureBox3_Click(object sender, EventArgs e)
         {
-            if (flippedBoxes.Count < 2)
+            if (flippedBoxes.Count < 2 && !flippedBoxes.Contains(pictureBox3))
             {
 
-                pictureBox3.Image = Deck.GetPartCards()[2].getImage();
-                Deck.GetPartCards()[2].setFlipStatus(true);
+                pictureBox3.Image = deck.GetPartCards()[2].getImage();
+                deck.GetPartCards()[2].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox3);
             }
         }
         private void PictureBox4_Click(object sender, EventArgs e)
         {
-            if (flippedBoxes.Count < 2)
+            if (flippedBoxes.Count < 2 && !flippedBoxes.Contains(pictureBox4))
             {
-                pictureBox4.Image = Deck.GetPartCards()[3].getImage();
-                Deck.GetPartCards()[3].setFlipStatus(true);
+                pictureBox4.Image = deck.GetPartCards()[3].getImage();
+                deck.GetPartCards()[3].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox4);
             }
         }
 
         private void PictureBox5_Click(object sender, EventArgs e)
         {
-            if (flippedBoxes.Count < 2)
+            if (flippedBoxes.Count < 2 && !flippedBoxes.Contains(pictureBox5))
             {
-                pictureBox5.Image = Deck.GetPartCards()[4].getImage();
-                Deck.GetPartCards()[4].setFlipStatus(true);
+                pictureBox5.Image = deck.GetPartCards()[4].getImage();
+                deck.GetPartCards()[4].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox5);
             }
         }
 
         private void PictureBox10_Click(object sender, EventArgs e)
         {
-            if (flippedBoxes.Count < 2)
+            if (flippedBoxes.Count < 2 && !flippedBoxes.Contains(pictureBox10))
             {
-                pictureBox10.Image = Deck.GetPartCards()[9].getImage();
-                Deck.GetPartCards()[9].setFlipStatus(true);
+                pictureBox10.Image = deck.GetPartCards()[9].getImage();
+                deck.GetPartCards()[9].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox10);
             }
         }
 
         private void PictureBox9_Click(object sender, EventArgs e)
         {
-            if (flippedBoxes.Count < 2)
+            if (flippedBoxes.Count < 2 && !flippedBoxes.Contains(pictureBox9))
             {
 
-                pictureBox9.Image = Deck.GetPartCards()[8].getImage();
-                Deck.GetPartCards()[8].setFlipStatus(true);
+                pictureBox9.Image = deck.GetPartCards()[8].getImage();
+                deck.GetPartCards()[8].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox9);
             }
         }
 
         private void PictureBox8_Click(object sender, EventArgs e)
         {
-            if (flippedBoxes.Count < 2)
+            if (flippedBoxes.Count < 2 && !flippedBoxes.Contains(pictureBox8))
             {
-                pictureBox8.Image = Deck.GetPartCards()[7].getImage();
-                Deck.GetPartCards()[7].setFlipStatus(true);
+                pictureBox8.Image = deck.GetPartCards()[7].getImage();
+                deck.GetPartCards()[7].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox8);
             }
         }
 
         private void PictureBox7_Click(object sender, EventArgs e)
         {
-            if (flippedBoxes.Count < 2)
+            if (flippedBoxes.Count < 2 && !flippedBoxes.Contains(pictureBox7))
             {
-                pictureBox7.Image = Deck.GetPartCards()[6].getImage();
-                Deck.GetPartCards()[6].setFlipStatus(true);
+                pictureBox7.Image = deck.GetPartCards()[6].getImage();
+                deck.GetPartCards()[6].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox7);
             }
         }
 
         private void PictureBox6_Click(object sender, EventArgs e)
         {
-            if (flippedBoxes.Count < 2)
+            if (flippedBoxes.Count < 2 && !flippedBoxes.Contains(pictureBox6))
             {
-                pictureBox6.Image = Deck.GetPartCards()[5].getImage();
-                Deck.GetPartCards()[5].setFlipStatus(true);
+                pictureBox6.Image = deck.GetPartCards()[5].getImage();
+                deck.GetPartCards()[5].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox6);
             }
         }
 
         private void PictureBox15_Click(object sender, EventArgs e)
         {
-            if (flippedBoxes.Count < 2)
+            if (flippedBoxes.Count < 2 && !flippedBoxes.Contains(pictureBox15))
             {
-                pictureBox15.Image = Deck.GetPartCards()[14].getImage();
-                Deck.GetPartCards()[14].setFlipStatus(true);
+                pictureBox15.Image = deck.GetPartCards()[14].getImage();
+                deck.GetPartCards()[14].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox15);
             }
         }
 
         private void PictureBox14_Click(object sender, EventArgs e)
         {
-            if (flippedBoxes.Count < 2)
+            if (flippedBoxes.Count < 2 && !flippedBoxes.Contains(pictureBox14))
             {
-                pictureBox14.Image = Deck.GetPartCards()[13].getImage();
-                Deck.GetPartCards()[13].setFlipStatus(true);
+                pictureBox14.Image = deck.GetPartCards()[13].getImage();
+                deck.GetPartCards()[13].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox14);
             }
         }
 
         private void PictureBox13_Click(object sender, EventArgs e)
         {
-            if (flippedBoxes.Count < 2)
+            if (flippedBoxes.Count < 2 && !flippedBoxes.Contains(pictureBox13))
             {
-                pictureBox13.Image = Deck.GetPartCards()[12].getImage();
-                Deck.GetPartCards()[12].setFlipStatus(true);
+                pictureBox13.Image = deck.GetPartCards()[12].getImage();
+                deck.GetPartCards()[12].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox13);
             }
         }
 
         private void PictureBox12_Click(object sender, EventArgs e)
         {
-            if (flippedBoxes.Count < 2)
+            if (flippedBoxes.Count < 2 && !flippedBoxes.Contains(pictureBox12))
             {
-                pictureBox12.Image = Deck.GetPartCards()[11].getImage();
-                Deck.GetPartCards()[11].setFlipStatus(true);
+                pictureBox12.Image = deck.GetPartCards()[11].getImage();
+                deck.GetPartCards()[11].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox12);
             }
         }
 
         private void PictureBox11_Click(object sender, EventArgs e)
         {
-            if (flippedBoxes.Count < 2)
+            if (flippedBoxes.Count < 2 && !flippedBoxes.Contains(pictureBox11))
             {
-                pictureBox11.Image = Deck.GetPartCards()[10].getImage();
-                Deck.GetPartCards()[10].setFlipStatus(true);
+                pictureBox11.Image = deck.GetPartCards()[10].getImage();
+                deck.GetPartCards()[10].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox11);
             }
         }
 
         private void PictureBox20_Click(object sender, EventArgs e)
         {
-            if (flippedBoxes.Count < 2)
+            if (flippedBoxes.Count < 2 && !flippedBoxes.Contains(pictureBox20))
             {
-                pictureBox20.Image = Deck.GetPartCards()[19].getImage();
-                Deck.GetPartCards()[19].setFlipStatus(true);
+                pictureBox20.Image = deck.GetPartCards()[19].getImage();
+                deck.GetPartCards()[19].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox20);
             }
         }
 
         private void PictureBox19_Click(object sender, EventArgs e)
         {
-            if (flippedBoxes.Count < 2)
+            if (flippedBoxes.Count < 2 && !flippedBoxes.Contains(pictureBox19))
             {
-                pictureBox19.Image = Deck.GetPartCards()[16].getImage();
-                Deck.GetPartCards()[16].setFlipStatus(true);
+                pictureBox19.Image = deck.GetPartCards()[18].getImage();
+                deck.GetPartCards()[18].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox19);
             }
         }
 
         private void PictureBox18_Click(object sender, EventArgs e)
         {
-            if (flippedBoxes.Count < 2)
+            if (flippedBoxes.Count < 2 && !flippedBoxes.Contains(pictureBox18))
             {
-                pictureBox18.Image = Deck.GetPartCards()[17].getImage();
-                Deck.GetPartCards()[17].setFlipStatus(true);
+                pictureBox18.Image = deck.GetPartCards()[17].getImage();
+                deck.GetPartCards()[17].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox18);
             }
         }
 
         private void PictureBox17_Click(object sender, EventArgs e)
         {
-            if (flippedBoxes.Count < 2)
+            if (flippedBoxes.Count < 2 && !flippedBoxes.Contains(pictureBox17))
             {
-                pictureBox17.Image = Deck.GetPartCards()[18].getImage();
-                Deck.GetPartCards()[18].setFlipStatus(true);
+                pictureBox17.Image = deck.GetPartCards()[16].getImage();
+                deck.GetPartCards()[16].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox17);
             }
         }
 
         private void PictureBox16_Click(object sender, EventArgs e)
         {
-            if (flippedBoxes.Count < 2)
+            if (flippedBoxes.Count < 2 && !flippedBoxes.Contains(pictureBox16))
             {
-                pictureBox16.Image = Deck.GetPartCards()[19].getImage();
-                Deck.GetPartCards()[19].setFlipStatus(true);
+                pictureBox16.Image = deck.GetPartCards()[15].getImage();
+                deck.GetPartCards()[15].setFlipStatus(true);
                 flippedBoxes.Add(pictureBox16);
             }
+        }
+
+        private void Label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PausePanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Label14_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

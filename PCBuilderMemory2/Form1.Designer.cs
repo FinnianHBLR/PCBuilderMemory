@@ -66,6 +66,22 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.userName = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.endScreen = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.pausePanel.SuspendLayout();
             this.startPanle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
@@ -90,6 +106,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.endScreen.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -154,7 +171,7 @@
             // 
             // pausePanel
             // 
-            this.pausePanel.Controls.Add(this.startPanle);
+            this.pausePanel.Controls.Add(this.endScreen);
             this.pausePanel.Controls.Add(this.mainMenuBtn);
             this.pausePanel.Controls.Add(this.pauseQuitBtn);
             this.pausePanel.Controls.Add(this.unPauseBtn);
@@ -164,15 +181,17 @@
             this.pausePanel.Name = "pausePanel";
             this.pausePanel.Size = new System.Drawing.Size(1397, 750);
             this.pausePanel.TabIndex = 29;
+            this.pausePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.PausePanel_Paint);
             // 
             // startPanle
             // 
+            this.startPanle.Controls.Add(this.userName);
+            this.startPanle.Controls.Add(this.label5);
             this.startPanle.Controls.Add(this.label4);
             this.startPanle.Controls.Add(this.listBox1);
             this.startPanle.Controls.Add(this.label3);
             this.startPanle.Controls.Add(this.mainQuitBtn);
             this.startPanle.Controls.Add(this.StartGameTemp);
-            this.startPanle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.startPanle.Location = new System.Drawing.Point(0, 0);
             this.startPanle.Name = "startPanle";
             this.startPanle.Size = new System.Drawing.Size(1397, 750);
@@ -499,6 +518,182 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
+            // userName
+            // 
+            this.userName.Location = new System.Drawing.Point(592, 529);
+            this.userName.Multiline = true;
+            this.userName.Name = "userName";
+            this.userName.Size = new System.Drawing.Size(291, 38);
+            this.userName.TabIndex = 31;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(653, 483);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(165, 32);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "Your Name:";
+            this.label5.Click += new System.EventHandler(this.Label5_Click);
+            // 
+            // endScreen
+            // 
+            this.endScreen.Controls.Add(this.startPanle);
+            this.endScreen.Controls.Add(this.label16);
+            this.endScreen.Controls.Add(this.label15);
+            this.endScreen.Controls.Add(this.label14);
+            this.endScreen.Controls.Add(this.label13);
+            this.endScreen.Controls.Add(this.label12);
+            this.endScreen.Controls.Add(this.label11);
+            this.endScreen.Controls.Add(this.label10);
+            this.endScreen.Controls.Add(this.label9);
+            this.endScreen.Controls.Add(this.label8);
+            this.endScreen.Controls.Add(this.button1);
+            this.endScreen.Controls.Add(this.label7);
+            this.endScreen.Controls.Add(this.label6);
+            this.endScreen.Controls.Add(this.label17);
+            this.endScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.endScreen.Location = new System.Drawing.Point(0, 0);
+            this.endScreen.Name = "endScreen";
+            this.endScreen.Size = new System.Drawing.Size(1397, 750);
+            this.endScreen.TabIndex = 30;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(61, 76);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(508, 69);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "The Pc You Build:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label7.Location = new System.Drawing.Point(758, 103);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(283, 36);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "You Final Time was:";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(137)))));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(600, 552);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(230, 60);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Home";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(70, 173);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(372, 29);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Cooler Master MasterBox  MB520";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(68, 218);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(277, 29);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "CYORIG H7 CPU Cooler";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(68, 258);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(91, 29);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Core i5";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(68, 301);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(336, 29);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "EVGA GTX 1660 Ti  6GB GPU";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(68, 343);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(359, 29);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "ASUS ROG STRIX Motherboard";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label13.Location = new System.Drawing.Point(70, 387);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(253, 29);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "Intel X550-T2 Network";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(70, 428);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(144, 29);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "Windows 10";
+            this.label14.Click += new System.EventHandler(this.Label14_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(68, 469);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(329, 29);
+            this.label15.TabIndex = 10;
+            this.label15.Text = "Cooler Master MWE 650 PSU";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(70, 514);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(325, 29);
+            this.label16.TabIndex = 11;
+            this.label16.Text = "G.SKILL Trident  Z RGB RAM";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(68, 552);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(349, 29);
+            this.label17.TabIndex = 12;
+            this.label17.Text = "Samsung 860 EVO 500GB SSD";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -560,6 +755,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.endScreen.ResumeLayout(false);
+            this.endScreen.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -604,6 +801,22 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox userName;
+        private System.Windows.Forms.Panel endScreen;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
     }
 }
 
