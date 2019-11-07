@@ -26,11 +26,15 @@ namespace PCBuilderMemory2
 
         private int cardCount = 0;
 
+        private int totalGameTime = 0;
+        private Leaderboard leaderboard;
 
 
         public Form1()
         {
             InitializeComponent();
+
+            leaderboard = new Leaderboard(this.listBox1, 10); // change last number to change max items
 
 
             //Create new picture boxes
@@ -72,6 +76,8 @@ namespace PCBuilderMemory2
             //Adds time to label
 
             currentScore.Text = currentTime.ToString();
+
+            totalGameTime++;
 
             //Flipping or removing cards
 
@@ -150,9 +156,11 @@ namespace PCBuilderMemory2
                 //END GAME CONDITIONS
                 game_timer.Enabled = false;
 
-                endScreen.Show();
+                pausePanel.Visible = true; // cause endSCreen is a child of PausePanel
+                endScreen.Visible = true;
 
-
+                label7.Text += formatTime(totalGameTime);
+                this.leaderboard.AddItem(new Item(this.userName.Text, this.totalGameTime));
             }
         }
 
@@ -210,6 +218,7 @@ namespace PCBuilderMemory2
 
         private void MainQuitBtn_Click(object sender, EventArgs e)
         {
+
             System.Windows.Forms.Application.Exit();
             //Quits application
         }
@@ -445,6 +454,37 @@ namespace PCBuilderMemory2
         private void Label14_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void userName_TextChanged(object sender, EventArgs e)
+        {
+            // only let a player start a game if they have entered a name.
+            if(((TextBox)sender).Text.Equals(""))
+            {
+                this.StartGameTemp.Enabled = false;
+            } else
+            {
+                this.StartGameTemp.Enabled = true;
+            }
+        }
+
+        private string formatTime(int time)
+        {
+            int minutes = (time / 60);
+            string output = "";
+            if (minutes != 0)
+            {
+                output += minutes + ":";
+            }
+            if (time - (minutes * 60) < 10) output += "0";
+            output += (time - (minutes * 60));
+
+            return output;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.startPanle.Visible = true;
         }
     }
 }

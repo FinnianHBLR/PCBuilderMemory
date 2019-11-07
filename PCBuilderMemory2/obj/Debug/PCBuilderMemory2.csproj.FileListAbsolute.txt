@@ -8,3 +8,15 @@ C:\Users\finnn\OneDrive\Semester 2\OOP\Assessment 2\PCBuilderMemory2\PCBuilderMe
 C:\Users\finnn\OneDrive\Semester 2\OOP\Assessment 2\PCBuilderMemory2\PCBuilderMemory2\obj\Debug\PCBuilderMemory2.csproj.CoreCompileInputs.cache
 C:\Users\finnn\OneDrive\Semester 2\OOP\Assessment 2\PCBuilderMemory2\PCBuilderMemory2\obj\Debug\PCBuilderMemory2.exe
 C:\Users\finnn\OneDrive\Semester 2\OOP\Assessment 2\PCBuilderMemory2\PCBuilderMemory2\obj\Debug\PCBuilderMemory2.pdb
+C:\Users\me\Desktop\git\PCBuilderMemory\PCBuilderMemory2\bin\Debug\PCBuilderMemory2.exe.config
+C:\Users\me\Desktop\git\PCBuilderMemory\PCBuilderMemory2\bin\Debug\PCBuilderMemory2.exe
+C:\Users\me\Desktop\git\PCBuilderMemory\PCBuilderMemory2\bin\Debug\PCBuilderMemory2.pdb
+C:\Users\me\Desktop\git\PCBuilderMemory\PCBuilderMemory2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\me\Desktop\git\PCBuilderMemory\PCBuilderMemory2\bin\Debug\Newtonsoft.Json.xml
+C:\Users\me\Desktop\git\PCBuilderMemory\PCBuilderMemory2\obj\Debug\PCBuilderMemory2.csprojAssemblyReference.cache
+C:\Users\me\Desktop\git\PCBuilderMemory\PCBuilderMemory2\obj\Debug\PCBuilderMemory2.Form1.resources
+C:\Users\me\Desktop\git\PCBuilderMemory\PCBuilderMemory2\obj\Debug\PCBuilderMemory2.Properties.Resources.resources
+C:\Users\me\Desktop\git\PCBuilderMemory\PCBuilderMemory2\obj\Debug\PCBuilderMemory2.csproj.GenerateResource.cache
+C:\Users\me\Desktop\git\PCBuilderMemory\PCBuilderMemory2\obj\Debug\PCBuilderMemory2.csproj.CopyComplete
+C:\Users\me\Desktop\git\PCBuilderMemory\PCBuilderMemory2\obj\Debug\PCBuilderMemory2.exe
+C:\Users\me\Desktop\git\PCBuilderMemory\PCBuilderMemory2\obj\Debug\PCBuilderMemory2.pdb
