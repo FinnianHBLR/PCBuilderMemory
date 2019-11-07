@@ -33,14 +33,8 @@
             this.gameListParts = new System.Windows.Forms.CheckedListBox();
             this.game_timer = new System.Windows.Forms.Timer(this.components);
             this.currentScore = new System.Windows.Forms.Label();
-            this.StartGameTemp = new System.Windows.Forms.Button();
             this.unPauseBtn = new System.Windows.Forms.Button();
             this.pausePanel = new System.Windows.Forms.Panel();
-            this.startPanle = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.mainQuitBtn = new System.Windows.Forms.Button();
             this.mainMenuBtn = new System.Windows.Forms.Button();
             this.pauseQuitBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -66,9 +60,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.userName = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.endScreen = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -81,9 +73,16 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.endScreen = new System.Windows.Forms.Panel();
+            this.StartGameTemp = new System.Windows.Forms.Button();
+            this.mainQuitBtn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.userName = new System.Windows.Forms.TextBox();
+            this.startPanle = new System.Windows.Forms.Panel();
             this.pausePanel.SuspendLayout();
-            this.startPanle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
@@ -107,6 +106,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.endScreen.SuspendLayout();
+            this.startPanle.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -143,19 +143,6 @@
             this.currentScore.TabIndex = 25;
             this.currentScore.Text = "0";
             // 
-            // StartGameTemp
-            // 
-            this.StartGameTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(137)))));
-            this.StartGameTemp.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartGameTemp.ForeColor = System.Drawing.Color.White;
-            this.StartGameTemp.Location = new System.Drawing.Point(592, 282);
-            this.StartGameTemp.Name = "StartGameTemp";
-            this.StartGameTemp.Size = new System.Drawing.Size(291, 80);
-            this.StartGameTemp.TabIndex = 26;
-            this.StartGameTemp.Text = "Play";
-            this.StartGameTemp.UseVisualStyleBackColor = false;
-            this.StartGameTemp.Click += new System.EventHandler(this.StartGameTemp_Click);
-            // 
             // unPauseBtn
             // 
             this.unPauseBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(137)))));
@@ -182,63 +169,6 @@
             this.pausePanel.Size = new System.Drawing.Size(1397, 750);
             this.pausePanel.TabIndex = 29;
             this.pausePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.PausePanel_Paint);
-            // 
-            // startPanle
-            // 
-            this.startPanle.Controls.Add(this.userName);
-            this.startPanle.Controls.Add(this.label5);
-            this.startPanle.Controls.Add(this.label4);
-            this.startPanle.Controls.Add(this.listBox1);
-            this.startPanle.Controls.Add(this.label3);
-            this.startPanle.Controls.Add(this.mainQuitBtn);
-            this.startPanle.Controls.Add(this.StartGameTemp);
-            this.startPanle.Location = new System.Drawing.Point(0, 0);
-            this.startPanle.Name = "startPanle";
-            this.startPanle.Size = new System.Drawing.Size(1397, 750);
-            this.startPanle.TabIndex = 30;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1165, 201);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(158, 34);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Top Scores";
-            // 
-            // listBox1
-            // 
-            this.listBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 23;
-            this.listBox1.Location = new System.Drawing.Point(1126, 236);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(240, 303);
-            this.listBox1.TabIndex = 29;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(524, 146);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(451, 58);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "PCBuilder Memory";
-            // 
-            // mainQuitBtn
-            // 
-            this.mainQuitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(137)))));
-            this.mainQuitBtn.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainQuitBtn.ForeColor = System.Drawing.Color.White;
-            this.mainQuitBtn.Location = new System.Drawing.Point(592, 390);
-            this.mainQuitBtn.Name = "mainQuitBtn";
-            this.mainQuitBtn.Size = new System.Drawing.Size(291, 79);
-            this.mainQuitBtn.TabIndex = 27;
-            this.mainQuitBtn.Text = "Quit";
-            this.mainQuitBtn.UseVisualStyleBackColor = false;
-            this.mainQuitBtn.Click += new System.EventHandler(this.MainQuitBtn_Click);
             // 
             // mainMenuBtn
             // 
@@ -518,47 +448,15 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
-            // userName
+            // label17
             // 
-            this.userName.Location = new System.Drawing.Point(592, 529);
-            this.userName.Multiline = true;
-            this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(291, 38);
-            this.userName.TabIndex = 31;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(653, 483);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(165, 32);
-            this.label5.TabIndex = 32;
-            this.label5.Text = "Your Name:";
-            this.label5.Click += new System.EventHandler(this.Label5_Click);
-            // 
-            // endScreen
-            // 
-            this.endScreen.Controls.Add(this.startPanle);
-            this.endScreen.Controls.Add(this.label16);
-            this.endScreen.Controls.Add(this.label15);
-            this.endScreen.Controls.Add(this.label14);
-            this.endScreen.Controls.Add(this.label13);
-            this.endScreen.Controls.Add(this.label12);
-            this.endScreen.Controls.Add(this.label11);
-            this.endScreen.Controls.Add(this.label10);
-            this.endScreen.Controls.Add(this.label9);
-            this.endScreen.Controls.Add(this.label8);
-            this.endScreen.Controls.Add(this.button1);
-            this.endScreen.Controls.Add(this.label7);
-            this.endScreen.Controls.Add(this.label6);
-            this.endScreen.Controls.Add(this.label17);
-            this.endScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.endScreen.Location = new System.Drawing.Point(0, 0);
-            this.endScreen.Name = "endScreen";
-            this.endScreen.Size = new System.Drawing.Size(1397, 750);
-            this.endScreen.TabIndex = 30;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(68, 552);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(349, 29);
+            this.label17.TabIndex = 12;
+            this.label17.Text = "Samsung 860 EVO 500GB SSD";
             // 
             // label6
             // 
@@ -684,15 +582,118 @@
             this.label16.TabIndex = 11;
             this.label16.Text = "G.SKILL Trident  Z RGB RAM";
             // 
-            // label17
+            // endScreen
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(68, 552);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(349, 29);
-            this.label17.TabIndex = 12;
-            this.label17.Text = "Samsung 860 EVO 500GB SSD";
+            this.endScreen.Controls.Add(this.startPanle);
+            this.endScreen.Controls.Add(this.label16);
+            this.endScreen.Controls.Add(this.label15);
+            this.endScreen.Controls.Add(this.label14);
+            this.endScreen.Controls.Add(this.label13);
+            this.endScreen.Controls.Add(this.label12);
+            this.endScreen.Controls.Add(this.label11);
+            this.endScreen.Controls.Add(this.label10);
+            this.endScreen.Controls.Add(this.label9);
+            this.endScreen.Controls.Add(this.label8);
+            this.endScreen.Controls.Add(this.button1);
+            this.endScreen.Controls.Add(this.label7);
+            this.endScreen.Controls.Add(this.label6);
+            this.endScreen.Controls.Add(this.label17);
+            this.endScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.endScreen.Location = new System.Drawing.Point(0, 0);
+            this.endScreen.Name = "endScreen";
+            this.endScreen.Size = new System.Drawing.Size(1397, 750);
+            this.endScreen.TabIndex = 30;
+            // 
+            // StartGameTemp
+            // 
+            this.StartGameTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(137)))));
+            this.StartGameTemp.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartGameTemp.ForeColor = System.Drawing.Color.White;
+            this.StartGameTemp.Location = new System.Drawing.Point(592, 282);
+            this.StartGameTemp.Name = "StartGameTemp";
+            this.StartGameTemp.Size = new System.Drawing.Size(291, 80);
+            this.StartGameTemp.TabIndex = 26;
+            this.StartGameTemp.Text = "Play";
+            this.StartGameTemp.UseVisualStyleBackColor = false;
+            this.StartGameTemp.Click += new System.EventHandler(this.StartGameTemp_Click);
+            // 
+            // mainQuitBtn
+            // 
+            this.mainQuitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(137)))));
+            this.mainQuitBtn.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainQuitBtn.ForeColor = System.Drawing.Color.White;
+            this.mainQuitBtn.Location = new System.Drawing.Point(592, 390);
+            this.mainQuitBtn.Name = "mainQuitBtn";
+            this.mainQuitBtn.Size = new System.Drawing.Size(291, 79);
+            this.mainQuitBtn.TabIndex = 27;
+            this.mainQuitBtn.Text = "Quit";
+            this.mainQuitBtn.UseVisualStyleBackColor = false;
+            this.mainQuitBtn.Click += new System.EventHandler(this.MainQuitBtn_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(524, 146);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(451, 58);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "PCBuilder Memory";
+            // 
+            // listBox1
+            // 
+            this.listBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 23;
+            this.listBox1.Location = new System.Drawing.Point(1126, 236);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(240, 303);
+            this.listBox1.TabIndex = 29;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1165, 201);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(158, 34);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Top Scores";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(653, 483);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(165, 32);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "Your Name:";
+            this.label5.Click += new System.EventHandler(this.Label5_Click);
+            // 
+            // userName
+            // 
+            this.userName.Location = new System.Drawing.Point(592, 529);
+            this.userName.Multiline = true;
+            this.userName.Name = "userName";
+            this.userName.Size = new System.Drawing.Size(291, 38);
+            this.userName.TabIndex = 31;
+            // 
+            // startPanle
+            // 
+            this.startPanle.Controls.Add(this.userName);
+            this.startPanle.Controls.Add(this.label5);
+            this.startPanle.Controls.Add(this.label4);
+            this.startPanle.Controls.Add(this.listBox1);
+            this.startPanle.Controls.Add(this.label3);
+            this.startPanle.Controls.Add(this.mainQuitBtn);
+            this.startPanle.Controls.Add(this.StartGameTemp);
+            this.startPanle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.startPanle.Location = new System.Drawing.Point(0, 0);
+            this.startPanle.Name = "startPanle";
+            this.startPanle.Size = new System.Drawing.Size(1397, 750);
+            this.startPanle.TabIndex = 30;
             // 
             // Form1
             // 
@@ -731,8 +732,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pausePanel.ResumeLayout(false);
             this.pausePanel.PerformLayout();
-            this.startPanle.ResumeLayout(false);
-            this.startPanle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
@@ -757,6 +756,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.endScreen.ResumeLayout(false);
             this.endScreen.PerformLayout();
+            this.startPanle.ResumeLayout(false);
+            this.startPanle.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -790,33 +791,33 @@
         private System.Windows.Forms.Timer game_timer;
         private System.Windows.Forms.PictureBox pictureBox23;
         private System.Windows.Forms.Label currentScore;
-        private System.Windows.Forms.Button StartGameTemp;
         private System.Windows.Forms.Button unPauseBtn;
         private System.Windows.Forms.Panel pausePanel;
-        private System.Windows.Forms.Panel startPanle;
         private System.Windows.Forms.Button pauseQuitBtn;
-        private System.Windows.Forms.Button mainQuitBtn;
         private System.Windows.Forms.Button mainMenuBtn;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel endScreen;
+        private System.Windows.Forms.Panel startPanle;
+        private System.Windows.Forms.TextBox userName;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox userName;
-        private System.Windows.Forms.Panel endScreen;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button mainQuitBtn;
+        private System.Windows.Forms.Button StartGameTemp;
+        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
     }
 }
 
